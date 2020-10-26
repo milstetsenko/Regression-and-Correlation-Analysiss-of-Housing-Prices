@@ -9,6 +9,8 @@ interpret the regression line (for categorical variable). No cleaning for the da
 I computed a heatmap to see the distribution of correlations between all the variables to identify the multicollinearity.
 
 
+
+
 Figure 2. The heatmap plot showing the correlation between the input variables. From the plot, one can see the stronger correlation between footage and number of bathrooms, the age and number of bedrooms.... The heatmap is time-efficient showing all the correlation and helps identify potential elimination instead of plotting all the scatterplots2
 
 
