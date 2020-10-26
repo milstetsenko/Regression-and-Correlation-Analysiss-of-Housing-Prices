@@ -8,10 +8,10 @@ interpret the regression line (for categorical variable). No cleaning for the da
  ## Correlation and Regression
 I computed a heatmap to see the distribution of correlations between all the variables to identify the multicollinearity.
 
+![Screenshot](https://github.com/milstetsenko/Regression-and-Correlation-Analysiss-of-Housing-Prices/blob/master/Screen%20Shot%202020-10-26%20at%208.55.49%20PM.png)
 
 
-
-Figure 2. The heatmap plot showing the correlation between the input variables. From the plot, one can see the stronger correlation between footage and number of bathrooms, the age and number of bedrooms.... The heatmap is time-efficient showing all the correlation and helps identify potential elimination instead of plotting all the scatterplots2
+   Figure 2. The heatmap plot showing the correlation between the input variables. From the plot, one can see the stronger correlation between footage and number of bathrooms, the age and number of bedrooms.... The heatmap is time-efficient showing all the correlation and helps identify potential elimination instead of plotting all the scatterplots2
 
 
 From the heatmap, I can see that sqft_living is strongly correlated to the number of bathrooms, and yr_built is strongly correlated to the condition of the house. Sqft_living also has a strong correlation with the number of bedrooms and yr_built with the number of bathrooms. Further on, I will use this information to conduct the correlation plots and to eliminate these variables. Using both number bedrooms and bathrooms seem redundant to the plot because of multicollinearity.
@@ -21,11 +21,14 @@ The R-squared value for a number of bathrooms against bedrooms is 0.27, therefor
   
  Further examining the data, I learned that the number of bathrooms does not improve the R squared value of the multiple regression, therefore I eliminate this variable).
 
-#### Checkpoint: 7 independent variables: 'bedrooms', 'sqft_living', ‘yr_built, 'sqft_basement’,
-‘bedrooms’, ‘condition’, ‘bathrooms’.
+#### Checkpoint: 7 independent variables: 'bedrooms', 'sqft_living', ‘yr_built, 'sqft_basement’,‘bedrooms’, ‘condition’, ‘bathrooms’.
 
 Before computing the multiple regression, I need to check the assumptions: the normality of the residuals, the constant variability of the residuals, independence of residuals, and the linear correlation of each of the variable to the response variable.
-Linear correlation to the response variable:
+### Linear correlation to the response variable:
+
+
+
+
 Figure 3: The part of the pair plot outputting the correlation plots of all the predictor variables against the response variable. Each of the plots represents a predictor variable plotted against the response variable - price.
 Looking at the pair plot (top row prices against the rest of the predictor variables), (Appendix C) (Seaborn Pydata, n.d), a number of bedrooms against prices are not linear (Appendix C), also the residuals (average distance of the factual data from the model’s prediction) have the reverse hyperbolic pattern, most of the residuals are concentrated below with many outliers on top.
 Sqft_living against prices is not ideal (Appendix C), because the data is somewhat heteroscedastic, but I will proceed with skepticism because the overall trend is linear, R squared
