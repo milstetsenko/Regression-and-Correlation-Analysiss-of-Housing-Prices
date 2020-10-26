@@ -32,7 +32,7 @@ Before computing the multiple regression, I need to check the assumptions: the n
 Figure 3: The part of the pair plot outputting the correlation plots of all the predictor variables against the response variable. Each of the plots represents a predictor variable plotted against the response variable - price.
 
 
-\\
+\
 
 Looking at the pair plot (top row prices against the rest of the predictor variables), a number of bedrooms against prices are not linear, also the residuals (average distance of the factual data from the model’s prediction) have the reverse hyperbolic pattern, most of the residuals are concentrated below with many outliers on top.
 
@@ -73,7 +73,7 @@ For the number of bedrooms: [-6.16e+04;-5.25e+04].
 For the footage of the house: [309.367;318.530].
 It means that if the data collection was repeated many times, 95% of the confidence intervals created would contain the population mean.
 
-![Screenshot]https://github.com/milstetsenko/Regression-and-Correlation-Analysiss-of-Housing-Prices/blob/master/Screen%20Shot%202020-10-26%20at%208.58.16%20PM.png)
+![Screenshot](https://github.com/milstetsenko/Regression-and-Correlation-Analysiss-of-Housing-Prices/blob/master/Screen%20Shot%202020-10-26%20at%208.58.16%20PM.png)
 
 ## Results and Conclusions
 I have obtained the prediction model based on its footage and the number of bedrooms. The population data is the whole state of Washington, however, the results might differ based on the area, because the King county includes Seattle - a more densely populated area, implying that the prices might be higher. One need to be cautious to avoid hasty generalization. The coefficient might be introduced as a measure of adapting to the demand on the houses or the location of the houses for it to be generalized to other areas. This needs to be further hypothesized and researched. The model does not prove that the prices rise/drop is caused by the number of bedrooms and the footage, only that it is correlated, however, it seems like a logical explanation.
