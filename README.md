@@ -27,29 +27,37 @@ Before computing the multiple regression, I need to check the assumptions: the n
 ### Linear correlation to the response variable:
 
 
-
+![Screenshot](https://github.com/milstetsenko/Regression-and-Correlation-Analysiss-of-Housing-Prices/blob/master/Screen%20Shot%202020-10-26%20at%208.57.47%20PM.png)
 
 Figure 3: The part of the pair plot outputting the correlation plots of all the predictor variables against the response variable. Each of the plots represents a predictor variable plotted against the response variable - price.
-Looking at the pair plot (top row prices against the rest of the predictor variables), (Appendix C) (Seaborn Pydata, n.d), a number of bedrooms against prices are not linear (Appendix C), also the residuals (average distance of the factual data from the model’s prediction) have the reverse hyperbolic pattern, most of the residuals are concentrated below with many outliers on top.
-Sqft_living against prices is not ideal (Appendix C), because the data is somewhat heteroscedastic, but I will proceed with skepticism because the overall trend is linear, R squared
 
 
-Sqft_basement against prices is not ideal either because it contains many 0 values (Appendix C). However, I will need to proceed with backward selection to make sure this variable contributes to the R-squared.
+\\
+
+Looking at the pair plot (top row prices against the rest of the predictor variables), a number of bedrooms against prices are not linear, also the residuals (average distance of the factual data from the model’s prediction) have the reverse hyperbolic pattern, most of the residuals are concentrated below with many outliers on top.
+
+1. Sqft_living against prices is not ideal, because the data is somewhat heteroscedastic, but I will proceed with skepticism because the overall trend is linear, R squared
+
+
+2. Sqft_basement against prices is not ideal either because it contains many 0 values. However, I will need to proceed with backward selection to make sure this variable contributes to the R-squared.
 
  
- Correlation and Regression
-Condition vs prices does not show any correlation at all (and R-square is 0), so I can take it out of the model. 
-The normality of the residuals:
-Checkpoint: I have 4 remaining independent variables: 'bedrooms','sqft_living', 'sqft_basement’, ‘yr_built’.
-As I can see from the normal probability plot (Appendix D), the residuals are not normal, not satisfying the condition for the model (the tails are too heavy). Hence, it is not reliable to use the model to predict the prices of the houses for sale. All the combinations of the predictor variable produce the unfit QQ plot. For the purpose of this assignment, I will continue inferencing from the model to perform the required steps of the assignment.
-Constant Variance: The condition is not satisfied, either, the plot is not football-shaped, the data is heteroscedastic 
+
+3. Condition vs prices does not show any correlation at all (and R-square is 0), so I can take it out of the model. 
+
+
+#### Checkpoint: I have 4 remaining independent variables: 'bedrooms','sqft_living', 'sqft_basement’, ‘yr_built’.
+
+### Constant Variance: 
+
+The condition is not satisfied, either, the plot is not football-shaped, the data is heteroscedastic 
 Independence: I do not know how the data was collected, the data was collected for a certain period of time (from May to May), therefore, there is no assurance that it is independent.
-Multiple regression:
-Backward elimination:
+
+## Multiple regression:
+### Backward elimination:
 Using the backward elimination method, I first computed all the variables in the regression model. I want to compare the R squared value of the equation with and without sqft_basement, because it might repeat the patterns of the sqft_living but is not shown on the feet map since not all of the houses have the basement. The R squared value is 0.507 without the basement variable dropping only by 0.01 points. This is an insignificant drop and it simplifies
 
 #### Checkpoint: 3 predictor variables: footage of the house, year the house was built in, and the number of bedrooms.
-
 
 Both of the P-values of the slopes are 0.00, confirming the idea that the variables are
 statistically significant to the model, which is consistent with the fact that if we take out any one
@@ -57,13 +65,15 @@ of the two variables out of the model, the R-squared value will drop significant
 significance: the R-squared value is 0.507. One can explain 50.7% of variance using these
 variables when predicting the price of the home based on the footage and the number of
 
-Confidence intervals.
+### Confidence intervals.
 Further on, I will construct confidence intervals for the slope of the regression line.
 Figure 4: The output of the multiple regression function, showing all the data necessary to make inferences about the model and justifying practical significance - the R-squared value.
 From this report, I can derive the 95% confidence interval:
 For the number of bedrooms: [-6.16e+04;-5.25e+04].
 For the footage of the house: [309.367;318.530].
 It means that if the data collection was repeated many times, 95% of the confidence intervals created would contain the population mean.
+
+![Screenshot]https://github.com/milstetsenko/Regression-and-Correlation-Analysiss-of-Housing-Prices/blob/master/Screen%20Shot%202020-10-26%20at%208.58.16%20PM.png)
 
 ## Results and Conclusions
 I have obtained the prediction model based on its footage and the number of bedrooms. The population data is the whole state of Washington, however, the results might differ based on the area, because the King county includes Seattle - a more densely populated area, implying that the prices might be higher. One need to be cautious to avoid hasty generalization. The coefficient might be introduced as a measure of adapting to the demand on the houses or the location of the houses for it to be generalized to other areas. This needs to be further hypothesized and researched. The model does not prove that the prices rise/drop is caused by the number of bedrooms and the footage, only that it is correlated, however, it seems like a logical explanation.
